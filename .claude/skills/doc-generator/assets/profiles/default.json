@@ -1,0 +1,115 @@
+{
+  "name": "default",
+  "description": "Perfil genérico: pacote completo de design docs com rastreabilidade.",
+  "language": "pt-BR",
+  "error_code_prefix": null,
+  "documents": {
+    "prd": {
+      "path": "PRD.md",
+      "required": true,
+      "sections": [
+        "Resumo",
+        "Problema",
+        "Público-alvo",
+        "Objetivos",
+        "Escopo",
+        "Requisitos funcionais",
+        "Requisitos não funcionais",
+        "Decisões",
+        "Dependências",
+        "Riscos",
+        "Critérios de aceitação",
+        "testes"
+      ],
+      "min_functional_requirements": 5,
+      "min_out_of_scope": 1,
+      "min_risks": 2,
+      "require_quantitative_goal": true
+    },
+    "rfc": {
+      "path": "RFC.md",
+      "required": true,
+      "sections": [
+        "Resumo executivo",
+        "Contexto",
+        "Proposta técnica",
+        "Alternativas consideradas",
+        "Questões em aberto",
+        "Impacto",
+        "Decisões relacionadas"
+      ],
+      "min_alternatives": 2,
+      "min_open_questions": 2,
+      "min_adr_links": 2,
+      "require_metadata": ["Autor", "Status", "Data", "Revisores"]
+    },
+    "fdd": {
+      "path": "FDD.md",
+      "required": true,
+      "sections": [
+        "Contexto",
+        "Objetivos técnicos",
+        "Escopo",
+        "Fluxos",
+        "Contratos públicos",
+        "erros",
+        "resiliência",
+        "Observabilidade",
+        "Dependências",
+        "Critérios de aceite",
+        "Riscos",
+        "Integração com o sistema existente"
+      ],
+      "min_endpoints": 3,
+      "min_integration_paths": 3,
+      "observability_terms": ["métrica", "log", "tracing"]
+    },
+    "adr": {
+      "dir": "adrs",
+      "required": true,
+      "filename_pattern": "^ADR-\\d{3}-[a-z0-9]+(-[a-z0-9]+)*\\.md$",
+      "min_count": 3,
+      "max_count": 12,
+      "sections": [
+        "Contexto",
+        "Decisão",
+        "Alternativas Consideradas",
+        "Consequências"
+      ],
+      "require_status": true,
+      "min_with_code_reference": 1,
+      "max_lines": 250
+    },
+    "tracker": {
+      "path": "TRACKER.md",
+      "required": true,
+      "columns": ["ID", "Documento", "Tipo", "Conteúdo", "Fonte", "Localização"],
+      "min_rows": 10,
+      "min_code_rows": 3,
+      "min_transcript_ratio": 0.0,
+      "min_id_coverage": 0.8
+    },
+    "readme": {
+      "path": "../README.md",
+      "required": false,
+      "sections": [
+        "Ferramentas",
+        "Workflow",
+        "Prompts",
+        "Iterações",
+        "navegar"
+      ],
+      "min_code_blocks": 2
+    }
+  },
+  "global_checks": {
+    "no_unsourced_markers": true,
+    "verify_code_paths": true,
+    "quarantine_not_required": true,
+    "forbidden_terms": [
+      "provavelmente escalável",
+      "deve atender bem",
+      "melhor prática do mercado"
+    ]
+  }
+}
